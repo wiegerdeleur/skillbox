@@ -1,0 +1,52 @@
+/* Custom CSS
+-------------------------*/
+a.logo {
+    background: url([[setting:logo]]) no-repeat 0 0;
+    display: block;
+    float: left;
+    height: 75px;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.dir-rtl a.logo {
+    background: url([[setting:logo]]) no-repeat 100% 0;
+    display: block;
+    float: right;
+}
+
+
+
+#header-img {
+	position:relative;
+}
+#logo {
+	position:absolute;
+	top:12.5%;
+	left:2.5%;
+	height:75%;
+	width:15%;
+	background: url([[pix:theme|logo]]) no-repeat;
+	background-size: contain;
+}
+.site-nav {
+	background: #ffffff;
+}
+
+.top-nav {
+}
+.top-nav > ul > li {
+	display: inline-block;
+	background:#fff;
+	margin-left:3px;
+	float: right;
+	padding: 0.5em 1em;
+}
+.breadcrumb {
+    background-color: transparent;
+}
+
+/* Custom CSS Settings
+-------------------------*/
+[[setting:customcss]]

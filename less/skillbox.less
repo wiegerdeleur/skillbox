@@ -1,0 +1,380 @@
+// Button
+.btn {
+  display: inline-block;
+  .ie7-inline-block();
+  padding: 4px 12px;
+  margin-bottom: 0; // For input.btn
+  font-size: @baseFontSize;
+  line-height: @baseLineHeight;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  .buttonBackground(@btnBackground, @btnBackgroundHighlight, @grayDark, 0 1px 1px rgba(255,255,255,.75));
+  .buttonBackground(@btnBackground, @btnBackgroundHighlight, @grayDark, none);
+  border: 1px solid lighten(@btnBorder, 10%);
+  *border: 0; // Remove the border to prevent IE7's black border on input:focus
+  border-color: lighten(@btnBorder, 10%) lighten(@btnBorder, 10%) darken(@btnBorder, 10%);
+  .border-radius(@baseBorderRadius);
+  .ie7-restore-left-whitespace(); // Give IE7 some love
+  .box-shadow(4px 4px @grayLighter);
+  //.box-shadow(~"inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05)");
+
+  // Hover/focus state
+  &:hover,
+  &:focus {
+    color: @white;
+	background-color: @btnBorder;
+	background-image: none;
+    text-decoration: none;
+	.box-shadow(4px 4px @gray);
+    
+    // transition is only when going to hover/focus, otherwise the background
+    // behind the gradient (there for IE<=9 fallback) gets mismatched
+    //.transition(background-position .1s linear);
+	//.transition(background-color .3s linear);
+	.transition(background-color .2s ease-out);
+  }
+
+  // Focus state for keyboard and accessibility
+  &:focus {
+    .tab-focus();
+  }
+
+  // Active state
+  &.active,
+  &:active {
+    background-image: none;
+    outline: 0;
+	.box-shadow(4px 4px @grayLighter);
+    //.box-shadow(~"inset 0 2px 4px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.05)");
+  }
+
+  // Disabled state
+  &.disabled,
+  &[disabled] {
+    cursor: default;
+    background-image: none;
+    .opacity(65);
+    .box-shadow(none);
+  }
+
+}
+.btn-primary {
+  //.buttonBackground(@btnPrimaryBackground, @btnPrimaryBackgroundHighlight);
+  background-image: none;
+  background-color: @orange;
+  text-shadow: none;
+  .box-shadow(4px 4px @grayLighter);
+  
+  // Hover/focus state
+  &:hover,
+  &:focus {
+	background-color: lighten(@orange, 15%);
+	background-image: none;
+    text-decoration: none;
+	.box-shadow(4px 4px @gray);
+    
+    // transition is only when going to hover/focus, otherwise the background
+    // behind the gradient (there for IE<=9 fallback) gets mismatched
+    //.transition(background-position .1s linear);
+	//.transition(background-color .3s ease-out);
+	.transition(.2s ease-out);
+  }
+
+}
+
+//lifting top-nav and content
+.two-column #region-main {
+	border-right: thin solid @blue;
+	position: relative;
+	top: -35px;
+}
+
+//Nav extra's
+.navbar .nav > li > a {
+	padding: 0;
+}
+#page-my-index a[href$="/my"], #page-user-files a[href$="/files.php"] {
+	color: @orange;
+	text-decoration: underline;
+	background-image: none;
+	background-color:  #fff;
+}
+.top-nav{
+	ul{
+		li{
+			padding: 0 !important;
+			background: none transparent;
+			a {
+				padding: 0.5em 1em;
+				background: -webkit-linear-gradient(#fff 80%, @grayLighter); /* For Safari 5.1 to 6.0 */
+  				background: -o-linear-gradient(#fff 80%, @grayLighter); /* For Opera 11.1 to 12.0 */
+ 				background: -moz-linear-gradient(#fff 80%, @grayLighter); /* For Firefox 3.6 to 15 */
+ 				background: linear-gradient(#fff 80%, @grayLighter); /* Standard syntax */
+				text-transform: uppercase;
+				color: @black;
+			}
+		}
+	}
+}
+#page-header {
+	margin: 0 5% 0 14px;
+	padding: 0 0 14px 0;
+	border-bottom: thin solid @blue;
+	#breadcrumb-back {
+		display: inherit;
+		margin: 8px 0 0 0;
+		padding:1px 5px; 
+		float:right;
+		cursor: pointer;
+	}
+	.breadcrumb-nav {
+		margin: 20px 0 0;
+		.breadcrumb {
+			padding: 8px 15px 8px 0;
+		}
+	}
+	h1 {
+		margin: 0;
+	}
+}
+#page-site-index #page-header #breadcrumb-back {
+	display: none;
+}
+
+.breadcrumb-button {
+	margin-top: 20px;
+	.singlebutton div {
+		margin-top: 0;
+		input[type="submit"] {
+			margin-bottom: 0;
+		}
+	}
+
+}
+[role=main] {
+	padding: 0 5% 0 14px;
+}
+//Blocks in course
+.coursebox, .sectionbox {
+    border: thin solid lighten(@blue, 20%);
+    border-radius: 0px;
+    margin: 8px 16px 16px 0;
+    padding: 8px !important;
+	box-shadow: 8px 8px @grayLighter;
+	.courseimage{
+		max-height: 100px;
+		overflow: hidden;
+		img{
+			max-height: none !important;
+			max-width: none !important;
+			width: 100%;
+		}
+	}
+}
+.block .content {
+	margin: 0;
+	padding: 4px 0;
+}
+.content {
+	.coursebox {
+	}	
+	.course_title, .section_title {
+		background: url([[pix:theme|corner_ur_blue_10]]) no-repeat top right;
+		border-bottom: thin solid @blue;
+	}
+	h2.title {
+		color: @black;
+		text-transform: uppercase;
+		letter-spacing: 0.02em;
+		a {
+			color: @black;
+		}
+	}
+}
+.course-content{
+	.single-section h3.sectionname {
+        text-align: inherit;
+	}
+}
+//Assignments and course content
+//form, text editor and title
+.path-mod-assign .mform {
+	.fitem div.fitemtitle {
+		float: none;
+		text-align: inherit;
+	}
+	.fitem div.feditor {
+		
+		margin: 8px 16px 16px 0;
+		box-shadow: 8px 8px @grayLighter;
+		.editor_atto_toolbar, .editor_atto_content_wrap {
+			border: thin solid @blue;
+		}
+	}
+}
+//questionaire
+#page-mod-questionnaire-preview, #page-mod-questionnaire-complete {
+	fieldset {
+		border: thin solid lighten(@blue, 20%);
+		box-shadow: 8px 8px @grayLighter;
+		padding: 8px;
+	}
+	.generalbox {
+		input[type="submit"]{
+			margin: 1em 0 0 10px;
+		}
+	}
+} 
+
+.qn-container{
+	color: inherit;
+	margin: 1em 0 0 10px;
+	.qn-legend {
+		border-bottom: medium none;
+		.qn-info {
+			background-color: @black;
+			color: @white;
+			padding: 7px 14px;
+		}
+	}
+	.qn-content{
+		margin: 0 55px 10px 0;
+		.qn-question {
+			background-color: transparent;
+			margin: 0 0 1.2em 55px;
+			padding: 0;
+			overflow: inherit;
+		}
+		.qn-answer {
+			//border-top: thin solid @grayDark;
+    		//padding-top: 1em;
+			margin: 2em 0 1.2em 55px;
+			overflow: inherit;
+		}
+	}
+}
+.surveyPage {
+    background-color: transparent;
+    border-bottom: 1px solid @blue;
+}
+//assignment page
+#page-mod-page-view {
+	#page-content {
+		[role=main]{
+			.generalbox{
+				.no-overflow{
+					overflow: inherit;			
+					text-align: justify;
+					-webkit-column-count: 2; /* Chrome, Safari, Opera */
+					-moz-column-count: 2; /* Firefox */
+					column-count: 2;
+					-webkit-column-gap: 20px; /* Chrome, Safari, Opera */
+					-moz-column-gap: 20px; /* Firefox */
+					column-gap: 20px;
+					img {
+						width: 100%;
+						border: thin solid lighten(@blue, 20%);
+						box-shadow: 8px 8px @grayLighter;
+					}
+				}
+			}
+		}
+	}
+}
+				
+
+//Aside
+#block-region-side-post .block { 
+	.header{ 
+		h2 {
+			text-transform: inherit;
+			text-shadow: none;
+			font-weight: inherit;
+			font-size: @baseFontSize * 1.25;
+			letter-spacing: 0.02em;
+			color: @white;
+			background-color: @orange;
+		}
+	}
+	.content{
+		padding: 4px 0;
+		.block_tree{ 
+			p {
+				font-size: @fontSizeLarge;
+				line-height: 1.5em;
+				padding-left: 21px;
+			}
+			.active_tree_node {
+				font-weight: normal;
+				font-family: 'Hind-Medium';
+				color: @orange;
+				a {
+					color: @orange;
+				}
+			}
+			.depth_2.contains_branch {
+				border-bottom: thin solid @blue;
+				margin-bottom: 6px;
+			}
+		}
+	}
+}
+//NAVIGATION HACKS
+.block_tree .type_unknown .tree_item.branch.navigation_node { display: none; } /* Remove "My home" */
+.block_tree .type_course.depth_2 { display: none; } /* Remove "Site pages" */
+.block_tree .type_user.depth_2 { display: none; } /* Remove "My profile" */
+#page-my-index .block_tree .type_user.depth_2, #page-user-edit .block_tree .type_user.depth_2, #page-user-profile .block_tree .type_user.depth_2 { display: inherit; } /* selectively show "My profile" */
+#settingsnav #usersettings { display: none; } /* Remove "My profile settings" */
+#page-user-edit #settingsnav #usersettings, #page-user-profile #settingsnav #usersettings { display: inherit; } /* selectively show "My profile settings" */
+////
+.jsenabled .block_navigation .block_tree .collapsed .tree_item.branch, .jsenabled .block_settings .block_tree .collapsed .tree_item.branch {
+    background-image: url([[pix:theme|corner_ul_blue_10]]);
+	background-position: 5px 5px;
+}
+.block_navigation .block_tree .tree_item.branch, .block_settings .block_tree .tree_item.branch {
+	background-image: url([[pix:theme|corner_dr_blue_10]]);
+	background-position: 5px 5px;
+}
+.block_navigation .block_tree li.item_with_icon > p img, .block_navigation .block_tree .type_activity > p.tree_item.active_tree_node img, .block_navigation .block_tree li > p.hasicon img {
+    height: 0;
+	width: 0;
+}
+
+#page-footer {
+    border-top: 8px solid @orange;
+}
+
+@media (max-width: 767px) {
+	#page-mod-page-view {
+		#page-content {
+			[role=main]{
+				.generalbox{
+					.no-overflow{
+						overflow: inherit;			
+						text-align: justify;
+						-webkit-column-count: 1; /* Chrome, Safari, Opera */
+						-moz-column-count: 1; /* Firefox */
+						column-count: 1;
+					}
+				}
+			}
+		}
+	}
+}
+@media all and (min-width:1200px) {
+	.path-mod-assign .mform {
+		.fitem div.fitemtitle {
+			float: none;
+			text-align: inherit;
+		}
+		.fitem div.feditor {
+			
+			margin: 8px 16px 16px 0;
+			box-shadow: 8px 8px @grayLighter;
+			.editor_atto_toolbar, .editor_atto_content_wrap {
+				border: thin solid @blue;
+			}
+		}
+	}
+}

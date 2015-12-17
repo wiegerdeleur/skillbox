@@ -1,0 +1,15 @@
+@CHARSET "UTF-8";
+
+.extfeedback_item_textfield {
+    display: inline-block;
+    padding: 30px 0 10px 0;
+}
+
+.slider .tooltip.tooltip-min, .slider .tooltip.tooltip-max {
+    /*display: none;*/
+}
+
+.tooltip {
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
