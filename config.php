@@ -101,7 +101,7 @@ $THEME->layouts = array(
         'defaultregion' => 'side-post',
     ),
     'login' => array(
-        'file' => 'columns1.php',
+        'file' => 'loginlayout.php',
         'regions' => array(),
         'options' => array('langmenu' => true),
     ),
