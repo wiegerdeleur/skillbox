@@ -69,7 +69,7 @@ echo $OUTPUT->doctype() ?>
             echo $OUTPUT->main_content();
             echo $OUTPUT->course_content_footer();
             ?>
-			<p>Nog geen account? <a href=<?php echo $CFG->wwwroot; ?>/login/signup.php">Maak er één</a></p>
+			<p>Nog geen account? <a href="<?php echo $CFG->wwwroot; ?>/login/signup.php">Maak er één</a></p>
         </section>
     </div>
 
