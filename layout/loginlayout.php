@@ -63,7 +63,7 @@ echo $OUTPUT->doctype() ?>
 	</header>
 
     <div id="page-content" class="row-fluid">
-        <section id="region-main" class="span12">
+        <section id="region-main" class="span12 text-center">
             <?php
             echo $OUTPUT->course_content_header();
             echo $OUTPUT->main_content();
