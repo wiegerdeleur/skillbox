@@ -54,6 +54,7 @@ echo $OUTPUT->doctype() ?>
 				<div class="nav-collapse collapse">
 					
 					<ul class="nav pull-right">
+						<li><?php echo $OUTPUT->user_menu(); ?></li>
 						<li><?php echo $OUTPUT->page_heading_menu(); ?></li>
 						<li class="navbar-text"><?php echo $OUTPUT->login_info() ?></li>
 						<li class="navbar-text"><a href="<?php echo $CFG->wwwroot; ?>"><img src="<?php echo $OUTPUT->pix_url('nav-home', 'theme');?>" alt="" /></a></li>
