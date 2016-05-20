@@ -55,11 +55,7 @@ echo $OUTPUT->doctype() ?>
 					
 					<ul class="nav pull-right">
 						<li><?php echo $OUTPUT->user_menu(); ?></li>
-						<li><?php echo $OUTPUT->page_heading_menu(); ?></li>
-						<li class="navbar-text"><?php echo $OUTPUT->login_info() ?></li>
-						<li class="navbar-text"><a href="<?php echo $CFG->wwwroot; ?>"><img src="<?php echo $OUTPUT->pix_url('nav-home', 'theme');?>" alt="" /></a></li>
-						<li class="navbar-text"><a href="<?php echo $CFG->wwwroot; ?>/message/index.php"><img src="<?php echo $OUTPUT->pix_url('nav-message', 'theme');?>" alt="" /></a></li>
-						<li class="navbar-text"><a href="<?php echo $CFG->wwwroot; ?>/user/edit.php"><img src="<?php echo $OUTPUT->pix_url('nav-settings', 'theme');?>" alt="" /></a></li>
+						
 					</ul>
 				</div>
 			</div>
