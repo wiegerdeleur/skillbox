@@ -16085,13 +16085,13 @@ body.has_dock div#dock {
 }
 /* selectively show "My profile settings" */
 .jsenabled .block_navigation .block_tree .collapsed .tree_item.branch,
-.jsenabled .block_settings .block_tree .collapsed .tree_item.branch {
+.jsenabled .block_settings .block_tree .collapsed .tree_item.branch,
+.jsenabled .block_navigation .block_tree li.collapsed .tree_item.branch {
   background-image: url([[pix:theme|corner_ul_blue_10]]);
   background-position: 5px 5px;
 }
 .block_navigation .block_tree .tree_item.branch,
-.block_settings .block_tree .tree_item.branch,
-.jsenabled .block_navigation .block_tree li.collapsed .tree_item.branch {
+.block_settings .block_tree .tree_item.branch {
   background-image: url([[pix:theme|corner_dr_blue_10]]);
   background-position: 5px 5px;
 }
