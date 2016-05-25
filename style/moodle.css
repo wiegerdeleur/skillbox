@@ -15973,6 +15973,8 @@ body.has_dock div#dock {
 }
 .moodle-actionmenu[data-enhanced].show .menu .iconsmall {
   margin: 4px 4px 4px -24px;
+  height: 20px;
+  width: 20px;
 }
 .moodle-actionmenu[data-enhanced].show .menu > li {
   display: block;
