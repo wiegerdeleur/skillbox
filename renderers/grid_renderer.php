@@ -2,10 +2,11 @@
 include_once($CFG->dirroot . "/course/format/grid/renderer.php");
 
 class theme_skillbox_format_grid_renderer extends format_grid_renderer {
-    private $topic0_at_top; // Boolean to state if section zero is at the top (true) or in the grid (false).
-    private $courseformat; // Our course format object as defined in lib.php.
+    protected $topic0_at_top; // Boolean to state if section zero is at the top (true) or in the grid (false).
+    protected $courseformat; // Our course format object as defined in lib.php.
     private $settings; // Settings array.
     private $shadeboxshownarray = array(); // Value of 1 = not shown, value of 2 = shown - to reduce ambiguity in JS.
+	private $portable = 0; // 1 = mobile, 2 = tablet.
 
     /**
      * Constructor method, calls the parent constructor - MDL-21097

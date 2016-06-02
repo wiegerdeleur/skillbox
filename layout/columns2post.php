@@ -45,20 +45,12 @@ echo $OUTPUT->doctype() ?>
 	<header role="banner" class="navbar navbar-fixed-top<?php echo $html->navbarclass ?> moodle-has-zindex">
 		<nav role="navigation" class="site-nav">
 			<div class="container-fluid">
-				
-				<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</a>
-				<div class="nav-collapse collapse">
+
+				<div class="nav pull-right">
 					
 					<ul class="nav pull-right">
-						<li><?php echo $OUTPUT->page_heading_menu(); ?></li>
-						<li class="navbar-text"><?php echo $OUTPUT->login_info() ?></li>
-						<li class="navbar-text"><a href="<?php echo $CFG->wwwroot; ?>"><img src="<?php echo $OUTPUT->pix_url('nav-home', 'theme');?>" alt="" /></a></li>
-						<li class="navbar-text"><a href="<?php echo $CFG->wwwroot; ?>/message/index.php"><img src="<?php echo $OUTPUT->pix_url('nav-message', 'theme');?>" alt="" /></a></li>
-						<li class="navbar-text"><a href="<?php echo $CFG->wwwroot; ?>/user/edit.php"><img src="<?php echo $OUTPUT->pix_url('nav-settings', 'theme');?>" alt="" /></a></li>
+						<li><?php echo $OUTPUT->user_menu(); ?></li>
+						
 					</ul>
 				</div>
 			</div>
