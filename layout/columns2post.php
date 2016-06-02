@@ -46,7 +46,7 @@ echo $OUTPUT->doctype() ?>
 		<nav role="navigation" class="site-nav">
 			<div class="container-fluid">
 
-				<div class="nav-collapse collapse">
+				<div class="nav pull-right">
 					
 					<ul class="nav pull-right">
 						<li><?php echo $OUTPUT->user_menu(); ?></li>
